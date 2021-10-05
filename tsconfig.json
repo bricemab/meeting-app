@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "target": "esnext",
     "module": "esnext",
     "strict": true,
@@ -7,7 +9,6 @@
     "importHelpers": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
@@ -36,5 +37,39 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+
+
+
+
+  "plugins": [
+    { "name": "typescript-tslint-plugin" }
+  ],
+  "target": "esnext",
+  "module": "esnext",
+  "strict": true,
+  "jsx": "preserve",
+  "importHelpers": true,
+  "moduleResolution": "node",
+  "skipLibCheck": true,
+  "resolveJsonModule": true,
+  "experimentalDecorators": true,
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true,
+  "sourceMap": false,
+  "baseUrl": ".",
+  "types": [
+    "webpack-env"
+  ],
+  "paths": {
+    "@/*": [
+      "src/*"
+    ]
+  },
+  "lib": [
+    "esnext",
+    "dom",
+    "dom.iterable",
+    "scripthost"
   ]
 }

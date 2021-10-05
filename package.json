@@ -18,8 +18,13 @@
     "@ionic/vue": "^5.4.0",
     "@ionic/vue-router": "^5.4.0",
     "core-js": "^3.6.5",
+    "i18next": "^21.2.4",
     "vue": "^3.2.1",
-    "vue-router": "^4.0.0-0"
+    "vue-class-component": "^7.2.6",
+    "vue-i18n": "^9.1.8",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@capacitor/cli": "3.2.4",

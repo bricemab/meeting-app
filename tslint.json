@@ -1,0 +1,43 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "src/locales/de/translations.json",
+      "src/locales/fr/translations.json",
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "quotemark": [true, "double"],
+    "indent": [true, "spaces", 2],
+    "whitespace": [
+      false,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ],
+    "semicolon": {
+      "severity": "error"
+    },
+    "jsdoc-format": false,
+    "arrow-parens": false,
+    "member-ordering": false,
+    "no-empty-interface": false,
+    "no-shadowed-variable": false,
+    "interface-name": false,
+    "no-console": false,
+    "ordered-imports": false,
+    "max-line-length": false,
+    "trailing-comma": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false,
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
+  }
+}
