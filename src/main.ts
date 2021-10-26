@@ -23,16 +23,18 @@ import '@ionic/vue/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import RequestManager from "@/modules/RequestManager";
 
-const token = sessionStorage.getItem("token");
-if (token) {
-    store.dispatch("welcomeBack", token.toString()).then(() => {
-        // console.log("WELCOME BACK");
-        // router.push("/");
-    });
+async function initToken() {
+    const token = sessionStorage.getItem("token");
+    if (token) {
+        RequestManager.setNewToken(token);
+        const welcomeBack = await store.dispatch("welcomeBack", token.toString());
+    }
 }
 
 // alert(i18next.t("test"));
+initToken();
 
 const app = createApp(App)
   .use(IonicVue)

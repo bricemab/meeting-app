@@ -3,13 +3,13 @@ import { Permission } from "./permissions";
 
 export const RolesAllowedPermissions = {
   USER_ANONYMOUS: [],
-  USER_DEFAULT: [
+  USER_NORMAL: [
     Permission.matchesManager.viewList
   ],
   USER_GOLD: [
 
   ],
-  USER_SUPREM: [
+  USER_PLATINUM: [
 
   ],
   USER_ADMIN: [

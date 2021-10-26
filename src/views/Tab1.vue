@@ -13,17 +13,23 @@
 
 <script lang="ts">
 import ExploreContainer from '@/components/ExploreContainer.vue';
-// import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonPage } from '@ionic/vue';
 import Translator from "@/locales/i18n";
+import Utils from "@/Utils/Utils";
 import {Vue} from "vue-property-decorator";
 export default  {
   extends: Vue,
   name: 'Tab1',
-  components: { ExploreContainer/*, IonHeader, IonToolbar, IonTitle, IonContent, IonPage*/ },
+  components: { ExploreContainer, IonPage/*, IonHeader, IonToolbar, IonTitle, IonContent, IonPage*/ },
   methods: {
+    test: function () {
+      return Utils.buildHmacSha256Signature({test: "coco"});
+    },
     t: function (text: string) {
-      console.log(Translator.t(text))
-    return Translator.t(text)
+      const t = Translator.t(text);
+      console.log(t);
+      console.log(this.test());
+      return Translator.t(text);
     }
   }
 }

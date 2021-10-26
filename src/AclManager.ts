@@ -1,14 +1,7 @@
 import store from "./store";
 import {RolesAllowedPermissions} from "./rolesPermissions";
 import {Permission} from "./permissions";
-
-export enum Role {
-  USER_ANONYMOUS = "USER_ANONYMOUS",
-  USER_STUDENT = "USER_STUDENT",
-  USER_TEACHER = "USER_TEACHER",
-  USER_RESPONSIBLE_TEACHER = "USER_RESPONSIBLE_TEACHER",
-  USER_PCPROFI = "USER_PCPROFI",
-}
+import {UserRole} from "./Utils/Types";
 
 //todo: reécrire la fonction avec les bonnes perms + roles + mettre les perms et roles au routes
 export default class AclManager {
@@ -21,7 +14,9 @@ export default class AclManager {
     let hasPermission = false;
     let redirectionRoute: string | undefined = "";
     const userRole: string = store.getters.user.role;
+    console.log(userRole)
     // Les routes spéciales sont gérées à part
+    console.log(routeRequiredPermission)
     if (
       routeRequiredPermission &&
       routeRequiredPermission.includes("specialState.")
@@ -30,16 +25,13 @@ export default class AclManager {
         case Permission.specialState.redirectToHome:
           hasPermission = false;
           switch (userRole) {
-            case Role.USER_ANONYMOUS:
-              redirectionRoute = "/ictvs/login";
+            case UserRole.USER_ANONYMOUS:
+              redirectionRoute = "/login";
               break;
-            case Role.USER_STUDENT:
-              redirectionRoute = "/ictvs/remote-desktop";
-              break;
-            case Role.USER_PCPROFI:
-            case Role.USER_TEACHER:
-            case Role.USER_RESPONSIBLE_TEACHER:
-              redirectionRoute = "/ictvs/students";
+            case UserRole.USER_NORMAL:
+            case UserRole.USER_GOLDEN:
+            case UserRole.USER_PLATINUM:
+              redirectionRoute = "/meet/matches";
               break;
             default:
               Error("Unknown role " + userRole + "detected, please specify it");

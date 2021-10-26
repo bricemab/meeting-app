@@ -7,15 +7,9 @@ export const Permission = {
     userLoggedOff: "specialState.userLoggedOff"
   },
   matchesManager: {
-    viewList: "matches.viewList"
+    viewList: "matches.viewList",
   },
-  examsManager: {
-    viewList: "exams.viewList",
-    edit: "exams.edit",
-    delete: "exams.delete",
-    create: "exams.create",
-    process: "exams.process",
-    examsBlocked: "exams.examsBlocked",
-    versions: "exams.versions"
-  },
+  settingsManager: {
+    viewPage: "settings.viewPage",
+  }
 };
