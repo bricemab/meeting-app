@@ -23,6 +23,7 @@ import '@ionic/vue/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+//import '../src/theme/styles.scss';
 import RequestManager from "@/modules/RequestManager";
 
 async function initToken() {

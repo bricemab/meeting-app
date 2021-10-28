@@ -1,10 +1,7 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <ion-title>MEETING APP</ion-title>
-        <button @click="createUser()">TEST</button>
-      </ion-toolbar>
+
     </ion-header>
 
   </ion-page>

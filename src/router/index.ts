@@ -4,6 +4,7 @@ import Tabs from '../views/Tabs.vue'
 import DefaultLayout from '../views/layouts/DefaultLayout.vue';
 import LoginPage from '../views/pages/LoginPage.vue';
 import RegisterPage from '../views/pages/RegisterPage.vue';
+import CreateOrConnexionPage from '../views/pages/CreateOrConnexionPage.vue';
 
 import AclManager from "@/AclManager";
 import {Permission} from "@/permissions";
@@ -16,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
         children: [
             {
                 path: "/",
-                redirect: "login"
+                redirect: "first-time"
             },
             {
                 path: "meet",
@@ -48,6 +49,13 @@ const routes: Array<RouteRecordRaw> = [
                         component: () => import("@/views/pages/ConversationsPage.vue")
                     }
                 ]
+            },
+            {
+                path: "first-time",
+                component: CreateOrConnexionPage,
+                meta: {
+                    permission: Permission.specialState.userLoggedOff
+                }
             },
             {
                 path: "login",

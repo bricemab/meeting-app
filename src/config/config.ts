@@ -1,6 +1,6 @@
 const config = {
     server: {
-        host: "http://localhost:8083",
+        host: "http://localhost:8084",
         backendAccessToken:
             "w&qzXH1LPD141@D3dUML4N9B|xE&_Ot|+y8mgBql+pynGdQ+WMucRapie#ktqpO&25RxBYB19Wm95g1G",
         hmacPacketSecretKey:
